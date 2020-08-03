@@ -1,12 +1,12 @@
 .btn {
-	width: 100%;
-	&.btn-alien {
-		color: #8a47ff;
-		border: 2px solid #8a47ff;
+  width: 100%;
+  &.btn-alien {
+    color: #8a47ff;
+    border: 2px solid #8a47ff;
 
-		&:hover {
-			color: #c6a4ff;
-			border: 2px solid #8a47ff;
-		}
-	}
+    &:hover {
+      color: #c6a4ff;
+      border-color: #c6a4ff;
+    }
+  }
 }
