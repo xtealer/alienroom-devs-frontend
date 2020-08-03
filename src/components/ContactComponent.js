@@ -39,7 +39,7 @@ const ContactComponent = (props) => {
         token: reCaptchaToken,
       });
 
-      if (response.code && response.code === 200) {
+      if (response.status && response.status === 200) {
         setStatus("success");
       } else {
         const error = { message: "Response could not be processed." };
@@ -100,6 +100,7 @@ const ContactComponent = (props) => {
                 placeholder="your name"
                 name="name"
                 required
+                value={name}
                 onChange={handleNameChange}
               />
 
@@ -108,7 +109,9 @@ const ContactComponent = (props) => {
                 type="text-area"
                 placeholder="your message here..."
                 name="message"
+                value={message}
                 required
+                minLength={10}
                 onChange={handleMessageChange}
               />
 
@@ -117,6 +120,7 @@ const ContactComponent = (props) => {
                 type="email"
                 placeholder="your@email.address"
                 name="email"
+                value={email}
                 required
                 onChange={handleEmailChange}
               />
