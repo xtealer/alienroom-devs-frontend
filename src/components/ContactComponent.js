@@ -132,22 +132,22 @@ const ContactComponent = (props) => {
               <ReCaptchaComponent onSuccess={onSuccess} />
 
               {canSubmit ? (
-                <Button variant="alien mt-4" onClick={handleOnSubmit}>
+                <Button variant="alien mt-2" onClick={handleOnSubmit}>
                   SEND
                 </Button>
               ) : (
-                <Button variant="outline-dark mt-4" disabled>
+                <Button variant="outline-dark mt-2" disabled>
                   SEND
                 </Button>
               )}
 
               {status ? (
                 status === "success" ? (
-                  <Form.Text className="text-success pt-3">
+                  <Form.Text className="text-success pt-2">
                     Your message was received.
                   </Form.Text>
                 ) : (
-                  <Form.Text className="text-danger pt-3">
+                  <Form.Text className="text-danger pt-2">
                     Something failed, try again.
                   </Form.Text>
                 )

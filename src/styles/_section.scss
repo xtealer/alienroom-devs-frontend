@@ -100,20 +100,36 @@ p {
 }
 
 .leadership-component {
-  @extend .flex-row;
   @extend .vh-100;
   @extend .min-vh-100;
   background-image: url("/images/coworking.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
+  @media (max-width: 650px) {
+    flex-direction: column !important;
+    justify-content: center;
+
+    .right-container {
+      flex: unset !important;
+    }
+    .left-container {
+      width: 100%;
+      flex: unset !important;
+    }
+
+    .center-container {
+      display: none !important;
+    }
+  }
+
   > div {
     @extend .d-flex;
     &.left-container,
     &.right-container {
       padding: 0 20px;
+      flex: 1;
       @extend .justify-content-center;
-      @extend .flex-grow-1;
       @extend .align-items-center;
     }
   }
@@ -180,6 +196,8 @@ p {
 .contact-component {
   @extend .vh-100;
   @extend .flex-column;
+
+  min-height: 760px;
 
   .content {
     @extend .d-flex;
