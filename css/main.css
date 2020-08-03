@@ -1,0 +1,70 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.animated-transition {
+  animation: opacidad 1 6s ease-in-out;
+}
+
+.border-grey-top {
+  border-top: 1px solid rgba(255, 247, 247, 0.29);
+}
+
+.footer {
+  display: flex;
+  height: 15%;
+  max-height: 15%;
+}
+
+.footer-child {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  max-height: 50%;
+  width: 100%;
+}
+
+.footer-title {
+  font-size: 0.8rem;
+}
+
+.font-light {
+  font-weight: 100;
+}
+
+@keyframes opacidad {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-transition{
+  animation: blinking infinite  2s  8s ease-in-out;
+  
+}
+@keyframes blinking{
+
+  
+  from {
+     opacity: 0.2;
+    
+  }
+  to {
+     opacity: 1;
+     
+  }
+
+  
+   
+  }
