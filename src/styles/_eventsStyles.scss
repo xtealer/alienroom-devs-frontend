@@ -1,0 +1,16 @@
+.events-component {
+	@extend .vh-100;
+	@extend .flex-column;
+
+	h2 {
+		@extend .mx-auto;
+		padding: 50px 0;
+	}
+
+	.social-board {
+		@extend .px-5;
+		padding-bottom: 3rem;
+		height: calc(100% - 150px);
+		width: 100%;
+	}
+}

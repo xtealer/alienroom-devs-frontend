@@ -1,0 +1,21 @@
+{
+	"arrowParens": "avoid",
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"htmlWhitespaceSensitivity": "css",
+	"insertPragma": false,
+	"jsxBracketSameLine": false,
+	"jsxSingleQuote": false,
+	"printWidth": 120,
+	"proseWrap": "preserve",
+	"quoteProps": "as-needed",
+	"requirePragma": false,
+	"semi": true,
+	"singleQuote": true,
+	"tabWidth": 4,
+	"trailingComma": "none",
+	"useTabs": true,
+	"vueIndentScriptAndStyle": false,
+	"filepath": "/Volumes/STORAGE/projects/react-alienroom/app/src/styles/_theme.scss",
+	"parser": "scss"
+}
