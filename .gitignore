@@ -12,6 +12,7 @@ package-lock.json
 # testing
 /coverage
 ui-debug.log
+firebase-debug.log
 
 # production
 /build
