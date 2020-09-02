@@ -1,5 +1,5 @@
-import { Button, Form } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import { Button, Form, Overlay } from "react-bootstrap";
+import React, { useEffect, useState, useRef } from "react";
 
 import getCurrentYear from "../helper/getCurrentYear";
 import ReCaptchaComponent from "./ReCaptchaComponent";
@@ -13,6 +13,10 @@ const ContactComponent = (props) => {
   const [reCaptchaToken, setReCaptchaToken] = useState("");
   const [canSubmit, setCanSubmit] = useState(false);
   const [status, setStatus] = useState("");
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  // refs
+  const messageRef = useRef(null);
 
   const onSuccess = (token) => {
     setReCaptchaToken(token);
@@ -84,6 +88,12 @@ const ContactComponent = (props) => {
     } else {
       setCanSubmit(false);
     }
+
+    if (message.length === 0 || message.length >= 10) {
+      setShowOverlay(false);
+    } else {
+      setShowOverlay(true);
+    }
   }, [name, email, message, canSubmit, reCaptchaToken]);
 
   return (
@@ -110,10 +120,32 @@ const ContactComponent = (props) => {
                 placeholder="your message here..."
                 name="message"
                 value={message}
+                ref={messageRef}
                 required
                 minLength={10}
                 onChange={handleMessageChange}
               />
+              <Overlay
+                target={messageRef.current}
+                show={showOverlay}
+                placement="bottom"
+              >
+                {({ placement, arrowProps, show: _show, popper, ...props }) => (
+                  <div
+                    {...props}
+                    style={{
+                      backgroundColor: "rgba(255, 100, 100, 0.85)",
+                      padding: "2px 10px",
+                      color: "white",
+                      borderRadius: 3,
+                      marginTop: 5,
+                      ...props.style,
+                    }}
+                  >
+                    Message must be at least 10 characters long.
+                  </div>
+                )}
+              </Overlay>
 
               <Form.Label className="pt-3">EMAIL</Form.Label>
               <Form.Control
