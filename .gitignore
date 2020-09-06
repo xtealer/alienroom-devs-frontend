@@ -24,6 +24,7 @@ firebase-debug.log
 .env.test.local
 .env.production.local
 .runtimeconfig.json
+*.env
 
 npm-debug.log*
 yarn-debug.log*
