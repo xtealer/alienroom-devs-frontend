@@ -4,7 +4,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 // imported routes
-const instagram = require("./instagram");
 const mail = require("./mail");
 
 // constants
@@ -19,7 +18,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/instagram", instagram);
 app.use("/mail", mail);
 
 // fallback response if not found
